@@ -7,3 +7,5 @@
 <li>Comment: <%= @bookmark.comment %></li>
 <li>Favorite: <%= @bookmark.is_favorite %></li>
 </ul>
+
+<%= link_to 'Edit bookmark', edit_bookmark_path(@bookmark) %>
