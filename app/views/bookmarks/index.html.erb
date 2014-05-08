@@ -1,5 +1,17 @@
 <ul>
 <% @bookmarks.each do |bookmark| %>
-<li>Title: <%= bookmark.title %>, category: <%= bookmark.category %></li>
+<li><%= bookmark.title %>
+    <% if bookmark.category != nil %>
+     | (<%= bookmark.category %>)
+     <% else %>
+     | (uncategorized)
+    <% end %>
+    <% if bookmark.is_favorite? %>
+     | (favorite)
+    <% end %>
+    <% if bookmark.comment? %>
+     | (comment)
+    <% end %>
+</li>
 <% end %>
 </ul>
