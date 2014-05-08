@@ -1,6 +1,10 @@
+
+<%=link_to 'New bookmark', new_bookmark_path %>
+
 <ul>
 <% @bookmarks.each do |bookmark| %>
-<li><%= bookmark.title %>
+<li>
+    <%= link_to bookmark.title, bookmark %>
     <% if bookmark.category != nil %>
      | (<%= bookmark.category %>)
      <% else %>
