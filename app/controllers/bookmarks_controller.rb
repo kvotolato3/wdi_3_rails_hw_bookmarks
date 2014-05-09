@@ -26,9 +26,19 @@ class BookmarksController < ApplicationController
   end
 
   def update
-    bookmark = Bookmark.find(params[:id])
-    bookmark.update(bookmark_params)
-    redirect_to bookmark
+    # retrieves the bookmark (with id from params) from db and assigns it to the Ruby object @bookmark, which is an instance of the
+    # Bookmark class, which is a subclass of ActiveRecord. Thus @bookmark inherits all the methods from Active Record.
+    @bookmark = Bookmark.find(params[:id])
+
+    # updates the bookmark we just retrieved from the db with whatever is in the params.
+    # if the update succeeds, it returns true, in which case it will redirect to the bookmark_path
+    # for the given @bookmark
+    if @bookmark.update(bookmark_params)
+      redirect_to bookmark_path(@bookmark)
+    else
+    # ellers it will render the edit screen (which will now have errors because it did not succeed).
+      render :edit
+    end
   end
 
   def destroy
