@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root 'bookmarks#index'
 
-  get 'bookmarks/serious' => 'bookmarks#serious'
-  get 'bookmarks/useful' => 'bookmarks#useful'
-  get 'bookmarks/funny' => 'bookmarks#funny'
+  get '/bookmarks/search/(:query)' => 'bookmarks#search'
   get 'bookmarks/uncategorized' => 'bookmarks#uncategorized'
 
   resources :bookmarks
