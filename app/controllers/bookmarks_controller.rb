@@ -1,14 +1,6 @@
 class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.by_category(params[:category])
-
-    if params[:category] == 'uncategorized'
-      @bookmarks = Bookmark.where('category is NULL OR category = \'\'').order(:title)
-    elsif params[:category]
-      @bookmarks = Bookmark.where(category: params[:category].capitalize).order(:title)
-    else
-      @bookmarks = Bookmark.order(:title)
-    end
   end
 
   def show
