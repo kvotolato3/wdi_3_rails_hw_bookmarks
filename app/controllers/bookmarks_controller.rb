@@ -42,6 +42,21 @@ class BookmarksController < ApplicationController
     render :index
   end
 
+  def useful
+    @bookmarks = Bookmark.where(category: 'Useful').order(:title)
+    render :index
+  end
+
+  def funny
+    @bookmarks = Bookmark.where(category: 'Funny').order(:title)
+    render :index
+  end
+
+  def uncategorized
+    @bookmarks = Bookmark.where(category: ['', nil]).order(:title)
+    render :index
+  end
+
 private
 
   def bookmark_params
