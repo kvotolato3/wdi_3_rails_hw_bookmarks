@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'bookmarks#index'
+
+  get 'bookmarks/serious' => 'bookmarks#serious'
+
   resources :bookmarks
 
   # The priority is based upon order of creation: first created -> highest priority.

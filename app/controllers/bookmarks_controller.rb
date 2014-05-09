@@ -37,6 +37,11 @@ class BookmarksController < ApplicationController
     redirect_to root_path
   end
 
+  def serious
+    @bookmarks = Bookmark.where(category: 'Serious').order(:title)
+    render :index
+  end
+
 private
 
   def bookmark_params

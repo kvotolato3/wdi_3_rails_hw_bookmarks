@@ -1,6 +1,12 @@
 
 <%=link_to 'New bookmark', new_bookmark_path %>
 
+
+<div class='filters'>
+Category filters:
+<%= link_to 'Serious', '/bookmarks/serious' %>
+</div>
+
 <ul>
 <% @bookmarks.each do |bookmark| %>
 <li>
