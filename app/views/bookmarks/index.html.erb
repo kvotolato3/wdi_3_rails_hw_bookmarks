@@ -1,10 +1,8 @@
-<h1>Bookmark Index</h1>
-
-<%=link_to 'New bookmark', new_bookmark_path %>
+<h1>Bookmark Manager</h1>
 
 <div class='filters'>
     Category filters:
-        <%= link_to "All", root_path%>
+        <%= link_to "All", root_path %>
         <% Bookmark::CATEGORIES.each do |category| %>
             <%= link_to category, bookmarks_path(category: category) %>
         <% end %>
