@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use postgresql as the database for Active Record
@@ -14,7 +13,12 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'bootstrap-sass'
+# Removed Bootstrap-affiliated gems, because I prefer using the officially
+# hosted Bootstrap CSS library (for now).
+# gem 'bootstrap-sass'
+# gem 'twitter-bootstrap-rails'
+# gem 'less-rails'
+# gem 'therubyracer'
 
 gem 'pry-rails'
 gem 'pry-nav'
@@ -42,4 +46,6 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
 
